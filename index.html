@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <video class="w-full h-screen object-cover fixed top-0 left-0 z-[-1]" autoplay muted loop src="./video.mp4"></video>
+    <header>
+        <nav
+            class="w-full h-[9.5vw] flex text-white items-center justify-start px-[8vmax] font-semibold text-xs fixed top-0 left-0 z-[9] max-md:px-[4vw]">
+            <div class="logo mr-[2vmax]">
+                <img class="w-[6.5vmax] hover-scale-down cursor-pointer cursor-hover-effect" src="./logo.svg" alt="" />
+            </div>
+            <div class="c-btns flex gap-[2vw] text-nowrap mr-[2vmax] max-lg:hidden">
+                <a href="" class="uppercase cursor-hover-effect">Toptracer Range</a>
+                <a href="" class="uppercase cursor-hover-effect">Golf Lessons</a>
+                <a href="" class="uppercase cursor-hover-effect">Adventure Golf</a>
+                <a href="" class="uppercase cursor-hover-effect">Café</a>
+                <a href="" class="uppercase cursor-hover-effect">Events</a>
+            </div>
+            <div class="r-btns ml-auto flex items-center gap-[.5vmax] text-nowrap">
+                <button
+                    class="r-btn bg-[black] uppercase box-content text-[1vmax] font-medium px-[2.5vmax] h-[3vmax] border-2 border-[--green] rounded-full min-h-[3vmax] cursor-hover-effect">
+                    <div class="btn-text-parent h-[200%]">
+                        <div class="btn-text h-[50%] flex items-center justify-center">
+                            Book Range
+                        </div>
+                        <div class="btn-text h-[50%] flex items-center justify-center">
+                            Book Range
+                        </div>
+                    </div>
+                </button>
+                <button
+                    class="r-btn bg-[black] uppercase box-content text-[1vmax] font-medium px-[2.5vmax] h-[3vmax] border-2 border-[--green] rounded-full min-h-[3vmax] cursor-hover-effect">
+                    <div class="btn-text-parent h-[200%]">
+                        <div class="btn-text h-[50%] flex items-center justify-center">
+                            Book Golf
+                        </div>
+                        <div class="btn-text h-[50%] flex items-center justify-center">
+                            Book Golf
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="menu-toggle cursor-hover-effect cursor-pointer w-[3.5vmax] lg:hidden relative ml-[2vmax]">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.655 543.64">
+                    <defs>
+                        <clipPath id="openmenu">
+                            <path fill="#fff" d="M544 144h512v414H544z"></path>
+                        </clipPath>
+                    </defs>
+                    <path fill="#fff"
+                        d="m138.6 541-.33-115.5h-32.01l-36.63 61.545L32.01 425.5H0V541h35.475v-50.82l25.08 40.42h17.16l25.08-42.24.33 52.64Zm57.095-29.37v-15.18h48.84V468.4h-48.84v-13.53h55.6V425.5H157.41V541h96.03v-29.37Zm148.66-86.13v52.47l-43.89-52.47h-32.01V541h37.95v-52.47l43.89 52.47h32.01V425.5Zm112.04 118.14c35.475 0 56.265-19.965 56.265-54.615V425.5h-38.285v62.37c0 17.655-6.765 24.255-17.655 24.255s-17.655-6.6-17.655-24.255V425.5h-38.94v63.525c0 34.65 20.79 54.615 56.27 54.615Z">
+                    </path>
+                    <g clip-path="url(#openmenu)" transform="translate(-543.405 -144)">
+                        <path fill="#fff"
+                            d="M893.3 146.514a23.983 23.983 0 0 1 34.7 21.5v208a26.932 26.932 0 0 1-.3 4 25.955 25.955 0 0 1 .3 4v92.8c76.5 16.6 128 47.7 128 83.2 0 53-114.6 96-256 96s-256-43-256-96 114.6-96 256-96a657.784 657.784 0 0 1 80 4.8v-78l-194.7-97.4a24.028 24.028 0 0 1 0-43l208-104ZM768 560.014c0 17.7 28.7 32 64 32s64-14.3 64-32-28.7-32-64-32-64 14.3-64 32Z">
+                        </path>
+                    </g>
+                    <path fill="#91b508"
+                        d="M169.55 132.385a6 6 0 0 1 0-10.769l157.4-77.365a6 6 0 0 1 8.645 5.384v154.73a6 6 0 0 1-8.647 5.385Z">
+                    </path>
+                </svg>
+            </div>
+            <div class="nav-border w-full h-[2px] bg-[--green] absolute bottom-0 left-0"></div>
+        </nav>
+
+        <div id="hamburger-menu"
+            class="fixed top-0 left-0 w-full h-full z-[9] bg-gradient-to-tr from-[--green-light] via-[--green] to-[--green-dark] rounded-b-xl border-b-[4px] border-[black] flex items-center justify-center lg:hidden">
+            <button
+                class="close-btn cursor-hover-effect absolute top-[1vmax] right-[1vmax] w-[3vmax] h-[3vmax] rounded-full flex items-center justify-center bg-black"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div
+                class="links uppercase font-black flex items-center justify-center flex-col text-[5vmax] leading-[10vmax] py-[2vmax]">
+                <a href="" class="cursor-hover-effect" style="--content: 'Toptracer Range';">Toptracer Range</a>
+                <a href="" class="cursor-hover-effect" style="--content: 'Golf Lessons';">Golf Lessons</a>
+                <a href="" class="cursor-hover-effect" style="--content: 'Adventure Golf';">Adventure Golf</a>
+                <a href="" class="cursor-hover-effect" style="--content: 'Café';">Café</a>
+                <a href="" class="cursor-hover-effect" style="--content: 'Events';">Events</a>
+            </div>
+        </div>
+    </header>
+    <main class="bg-[--translucent-black] w-full">
+        <div class="wrapper relative z-[1]">
+            <section id="page1"
+                class="w-full h-screen flex flex-col items-center justify-center relative overflow-hidden">
+                <h1 class="text-[7vw] font-black uppercase dup-effect">
+                    Eat. Drink. Play.
+                </h1>
+                <h3 class="text-[2vw] font-black uppercase mb-[1vw] max-md:text-[3vw]">
+                    Welcome to Sidcup Family Golf!
+                </h3>
+                <p
+                    class="w-[50%] text-center text-[1.4vw] leading-[2vw] max-md:text-[2vw] max-md:w-[75%] max-md:leading-[3vw]">
+                    Sidcup Family Golf is a Toptracer driving range and crazy golf venue
+                    in Sidcup, South East London. Passionate about technology, player
+                    development and making golf fun and accessible to everyone.
+                </p>
+
+                <div
+                    class="arrow-icon-page-1 absolute bottom-[0] left-[-4vmax] w-[15vmax] aspect-square flex justify-center items-center cursor-hover-effect">
+                    <div class="circle absolute top-0 left-0 border-2 border-[--green] rounded-full w-full h-full">
+                    </div>
+                    <div class="svgs-container h-[2vmax] overflow-hidden">
+                        <div class="svgs">
+                            <svg class="h-[2vmax] rotate-90 fill-[white]" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512">
+                                <path
+                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                </path>
+                            </svg>
+                            <svg class="h-[2vmax] rotate-90 fill-[white]" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512">
+                                <path
+                                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page2" class="w-full overflow-hidden max-md:h-fit">
+                <div class="marquee flex gap-[2vw] font-black text-[7vw] uppercase text-nowrap w-full">
+                    <div class="tagline cursor-default shrink-0">
+                        <span style="--span-content: 'Toptracer Range'">Toptracer Range</span>
+                    </div>
+                    <div class="tagline cursor-default shrink-0">
+                        <span style="--span-content: 'Golf Lessons'">Golf Lessons</span>
+                    </div>
+                    <div class="tagline cursor-default shrink-0">
+                        <span style="--span-content: 'Crazy Golf'">Crazy Golf</span>
+                    </div>
+                    <div class="tagline cursor-default shrink-0">
+                        <span style="--span-content: 'Coffee Shop'">Coffee Shop</span>
+                    </div>
+                </div>
+
+                <div class="bottom w-full py-[5vw] relative px-[8vmax] md:flex md:justify-center md:items-center max-md:px-[4vw]">
+                    <div class="images-row w-full h-full flex items-center justify-between gap-[5vmax] absolute top-0 left-0 max-md:static md:px-[8vmax]">
+                        <div class="image-1 w-[10vmax] aspect-square overflow-hidden rounded-md max-md:w-full">
+                            <img src="./Images/image-1.avif" alt="image-1"
+                                class="w-full h-full object-cover hover-scale-up cursor-hover-effect" />
+                        </div>
+                        <div class="image-2 w-[10vmax] aspect-[10/13] overflow-hidden rounded-md max-md:w-full max-md:aspect-square">
+                            <img src="./Images/image-2.avif" alt="image-2"
+                                class="w-full h-full object-cover hover-scale-up cursor-hover-effect" />
+                        </div>
+                    </div>
+                    <div class="content-row w-[48%] flex justify-center items-center max-md:mt-[2.5vmax] max-md:w-full">
+                        <div class="content text-center leading-[2.6vmax] text-[1.4vmax] font-medium">
+                            <h4 class="text-[3vmax] font-black uppercase">About Us</h4>
+                            <p class="mb-[2vmax] mt-[2.5vmax]">
+                                Home to a 46-bay, multi-tier, floodlit driving range, powered by
+                                Toptracer Range technology. Complimented by a practice green and
+                                bunker, coffee shop and American Golf Store. There truly is
+                                something for everyone as we also boast two outdoor 18-hole
+                                dinosaur themed crazy golf courses.
+                            </p>
+                            <p>
+                                Please note: we are a cashless venue. The range closes at 10pm
+                                with last balls at 9pm.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page3" class="w-full min-h-screen py-[5vmax] flex items-center justify-center">
+                <div class="cards flex justify-center items-center gap-[4vmax] relative max-md:flex-col">
+                    <div class="dotted-grid absolute top-[-5vmax] left-[-2vmax]"></div>
+
+                    <div style="--xAngle: 0deg; --yAngle: 0deg;"
+                        class="card w-[25vmax] h-[40vmax] rounded-xl overflow-hidden relative max-md:w-[80vw] max-md:h-[35vw] cursor-hover-effect">
+                        <div class="default w-full h-full">
+                            <div class="img w-full h-full">
+                                <img src="./Images/card-img-1.jpg" alt="card-img-1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="text absolute bottom-0 left-0 p-[1.5vmax] font-black">
+                                <h3 class="uppercase text-[2.2vmax] leading-[2.5vmax]">
+                                    TopTracer Range
+                                </h3>
+                            </div>
+                        </div>
+                        <div
+                            class="overlay absolute top-0 left-0 w-full h-full bg-[--green] p-[2.3vmax] max-md:flex max-md:flex-col max-md:justify-end">
+                            <h3
+                                class="uppercase text-[2.2vmax] leading-[2.5vmax] font-black text-black mt-[7vmax] mb-[1.4vmax] max-md:mt-0">
+                                TopTracer Range
+                            </h3>
+                            <div class="paras">
+                                <p class="text-black text-[1.3vmax] leading-[2.3vmax] font-normal mb-[1.7vmax]">
+                                    Our range delivers the same ball-tracking technology that
+                                    traces the shots of the game's best players on TV.
+                                </p>
+                                <p class="text-black text-[1.3vmax] leading-[2.3vmax] font-normal">
+                                    Toptracer Range technology offers a fun, engaging, tech-driven
+                                    experience that appeals to seasoned players, range rivals,
+                                    friends, family members, and even first-time golfers.
+                                </p>
+                            </div>
+                            <div
+                                class="arrow-icon absolute top-[-2vmax] right-[-2vmax] border-2 border-black rounded-full w-[8vmax] aspect-square flex justify-center items-center max-md:w-[30%] max-md:top-[-4vmax] max-md:right-[-4vmax]">
+                                <svg class="w-[2vmax]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path
+                                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="--xAngle: 0deg; --yAngle: 0deg"
+                        class="card w-[25vmax] h-[40vmax] rounded-xl overflow-hidden relative max-md:w-[80vw] max-md:h-[35vw] cursor-hover-effect">
+                        <div class="default w-full h-full">
+                            <div class="img w-full h-full">
+                                <img src="./Images/card-img-2.jpg" alt="card-img-1"
+                                    class="w-full h-full object-cover" />
+                            </div>
+                            <div class="text absolute bottom-0 left-0 p-[1.5vmax] font-black">
+                                <h3 class="uppercase text-[1.5vmax] leading-[2.5vmax]">
+                                    Mr Mulligan's
+                                </h3>
+                                <h3 class="uppercase text-[2.2vmax] leading-[2.5vmax] w-[70%]">
+                                    Adventure Golf
+                                </h3>
+                            </div>
+                        </div>
+                        <div
+                            class="overlay absolute top-0 left-0 w-full h-full bg-[--green] p-[2.3vmax] max-md:flex max-md:flex-col max-md:justify-end">
+                            <h3
+                                class="uppercase text-[2.2vmax] leading-[2.5vmax] font-black text-black mt-[7vmax] mb-[1.4vmax] max-md:mt-0">
+                                Adventure Golf
+                            </h3>
+                            <div class="paras">
+                                <p class="text-black text-[1.3vmax] leading-[2.3vmax] font-normal mb-[1.7vmax]">
+                                    Adventure awaits you!
+                                </p>
+                                <p class="text-black text-[1.3vmax] leading-[2.3vmax] font-normal">
+                                    Become a Jurassic explorer as you delve into the land of the
+                                    dinosaurs! Putt your way through prehistoric landscape,
+                                    cascading waterfalls and meet some dinosaur friends along the
+                                    way.
+                                </p>
+                            </div>
+                            <div
+                                class="arrow-icon absolute top-[-2vmax] right-[-2vmax] border-2 border-black rounded-full w-[8vmax] aspect-square flex justify-center items-center max-md:w-[30%] max-md:top-[-4vmax] max-md:right-[-4vmax]">
+                                <svg class="w-[2vmax]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path
+                                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="--xAngle: 0deg; --yAngle: 0deg"
+                        class="card w-[25vmax] h-[40vmax] rounded-xl overflow-hidden relative max-md:w-[80vw] max-md:h-[35vw] cursor-hover-effect">
+                        <div class="default w-full h-full">
+                            <div class="img w-full h-full">
+                                <img src="./Images/card-img-3.jpg" alt="card-img-1"
+                                    class="w-full h-full object-cover" />
+                            </div>
+                            <div class="text absolute bottom-0 left-0 p-[1.5vmax] font-black">
+                                <h3 class="uppercase text-[2.2vmax] leading-[2.5vmax]">
+                                    Golf Lessons
+                                </h3>
+                            </div>
+                        </div>
+                        <div
+                            class="overlay absolute top-0 left-0 w-full h-full bg-[--green] p-[2.3vmax] max-md:flex max-md:flex-col max-md:justify-end">
+                            <h3
+                                class="uppercase text-[2.2vmax] leading-[2.5vmax] font-black text-black mt-[7vmax] mb-[1.4vmax] max-md:mt-0">
+                                Golf Lessons
+                            </h3>
+                            <div class="paras">
+                                <p class="text-black text-[1.3vmax] leading-[2.3vmax] font-normal mb-[1.7vmax]">
+                                    Passionate about player development, whether you are new to
+                                    the game or an aspiring pro, we offer both group and
+                                    individual lessons tailored to you with the sole focus of
+                                    helping you reach your goals.
+                                </p>
+                            </div>
+                            <div
+                                class="arrow-icon absolute top-[-2vmax] right-[-2vmax] border-2 border-black rounded-full w-[8vmax] aspect-square flex justify-center items-center max-md:w-[30%] max-md:top-[-4vmax] max-md:right-[-4vmax]">
+                                <svg class="w-[2vmax]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path
+                                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page4"
+                class="w-full h-[15vmax] bg-gradient-to-tr from-[--green-light] via-[--green] to-[--green-dark] relative">
+                <div class="img-left w-[10%] h-full overflow-hidden absolute top-0 left-0 rotate-180">
+                    <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
+                        alt="dot-grid" class="w-full h-full object-cover mix-blend-overlay" />
+                </div>
+                <div class="text w-full h-full flex items-center justify-center">
+                    <p class="text-black font-black text-[1.6vmax] w-[50%] text-center leading-[2.5vmax]">
+                        SIGN UP FOR SIDCUP NEWS AND SPECIAL OFFERS STRAIGHT TO YOUR INBOX
+                    </p>
+                </div>
+                <div class="img-right w-[10%] h-full overflow-hidden absolute top-0 right-0">
+                    <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
+                        alt="dot-grid" class="w-full h-full object-cover mix-blend-overlay" />
+                </div>
+            </section>
+            <section id="page5"
+                class="w-full py-[3vmax] flex items-center justify-between px-[8vmax] max-md:flex-col max-md:justify-center max-md:px-[4vw]">
+                <div class="left w-[40vmax] max-md:w-full">
+                    <div class="carousel relative w-full h-full">
+                        <div class="dotted-grid absolute bottom-[0] left-[-2vmax]"></div>
+                        <div class="images aspect-[20/13] relative cursor-hover-effect cursor-pointer">
+                            <div class="img current w-full h-full rounded-xl overflow-hidden shrink-0">
+                                <img src="./Images/carousel-img-1.avif" alt="carousel-img-1"
+                                    class="w-full h-full object-cover" />
+                            </div>
+                            <div class="img w-full h-full rounded-xl overflow-hidden shrink-0">
+                                <img src="./Images/carousel-img-2.avif" alt="carousel-img-2"
+                                    class="w-full h-full object-cover" />
+                            </div>
+                            <div class="img w-full h-full rounded-xl overflow-hidden shrink-0">
+                                <img src="./Images/carousel-img-3.avif" alt="carousel-img-3"
+                                    class="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                        <div class="carousel-btns w-full py-[2vmax] flex items-center justify-center gap-[1.5vmax]">
+                            <div class="carousel-btn w-[.6vmax] aspect-square bg-[white] rounded-full active"
+                                onclick="changeCarouselImage(0)"></div>
+                            <div class="carousel-btn w-[.6vmax] aspect-square bg-[white] rounded-full"
+                                onclick="changeCarouselImage(1)"></div>
+                            <div class="carousel-btn w-[.6vmax] aspect-square bg-[white] rounded-full"
+                                onclick="changeCarouselImage(2)"></div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="right w-[44%] leading-[2.6vmax] text-[1.3vmax] font-normal flex flex-col items-start gap-[2vmax] max-md:w-full">
+                    <h4 class="font-black text-[2.5vmax] mt-[6vmax]">FOOD AND DRINK</h4>
+                    <p>
+                        Whether you’re getting ready to play, just finishing your practice
+                        session or feeling peckish on the range, we have a variety of food
+                        and drink options bought directly to your table or bay.
+                    </p>
+                    <p>
+                        We make sure that we cater for everyone, offering a range of vegan
+                        and gluten free options.
+                    </p>
+                    <button
+                        class="r-btn bg-[black] uppercase box-content text-[1vmax] font-medium px-[2.5vmax] h-[3.5vmax] border-2 border-[--green] rounded-full min-h-[3vmax] cursor-hover-effect">
+                        <div class="btn-text-parent h-[200%]">
+                            <div class="btn-text h-[50%] flex items-center justify-center">
+                                Coffee Shop
+                            </div>
+                            <div class="btn-text h-[50%] flex items-center justify-center">
+                                Coffee Shop
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </section>
+            <section id="page6" class="overflow-hidden py-[5vmax]">
+                <div class="stuff rotate-[-3deg] w-full">
+                    <div class="img-marquee h-[27vmax] flex gap-[2vmax] px-[2vmax] max-md:h-[40vmax] max-md:gap-[4vmax]"></div>
+                    <h4
+                        class="uppercase font-black text-[1.5vmax] mt-[1vmax] mr-[8vmax] text-right cursor-hover-effect cursor-pointer hover:text-[--green] transition duration-[.3s] max-md:mr-[0] max-md:text-center">
+                        <i class="fa-brands fa-instagram text-inherit"></i> Follow Us On Instagram
+                    </h4>
+                </div>
+            </section>
+            <section id="page7" class="px-[8vmax] py-[6vmax] uppercase max-md:px-[4vw]">
+                <h2 class="text-outline font-black text-[4.9vw] text-center mb-[-2.4vmax] text-nowrap"
+                    style="--content: 'What are you waiting for?'; --outline-color: white;">What are you waiting for?
+                </h2>
+                <div class="bottom-cards cards flex gap-[2vmax] font-black text-black max-md:flex-col">
+                    <div
+                        class="card w-full h-[10vmax] bg-[--green] rounded-xl flex items-center justify-center overflow-hidden relative cursor-pointer cursor-hover-effect max-md:h-[30vw] max-md:bg-[]">
+                        <img src="./Images/card2-img-1.avif"
+                            class="w-full h-full object-cover absolute top-0 left-0 opacity-[0] max-md:opacity-[1]" alt="">
+                        <h3 class="relative z-[2] text-black font-black text-[2.3vmax] max-md:text-[white]">TopTracer Range</h3>
+                    </div>
+                    <div
+                        class="card w-full h-[10vmax] bg-[--green] rounded-xl flex items-center justify-center overflow-hidden relative cursor-pointer cursor-hover-effect max-md:h-[30vw] max-md:bg-[transparent]">
+                        <img src="./Images/card2-img-2.avif"
+                            class="w-full h-full object-cover absolute top-0 left-0 opacity-[0] max-md:opacity-[1]" alt="">
+                        <h3 class="relative z-[2] text-black font-black text-[2.3vmax] max-md:text-[white]">Golf Lessons</h3>
+                    </div>
+                    <div
+                        class="card w-full h-[10vmax] bg-[--green] rounded-xl flex items-center justify-center overflow-hidden relative cursor-pointer cursor-hover-effect max-md:h-[30vw] max-md:bg-[transparent]">
+                        <img src="./Images/card2-img-3.avif"
+                            class="w-full h-full object-cover absolute top-0 left-0 opacity-[0] max-md:opacity-[1]" alt="">
+                        <h3 class="relative z-[2] text-black font-black text-[2.3vmax] max-md:text-[white]">Adventure Golf</h3>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="w-full bg-gradient-to-tr from-[--green-light] via-[--green] to-[--green-dark] relative">
+        <div class="img-left w-[20%] h-full py-[2vmax] overflow-hidden absolute bottom-0 left-0 rotate-180 max-md:w-3/5 max-md:h-3/5">
+            <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-footer.svg" alt="dot-grid"
+                class="w-full h-full object-cover mix-blend-overlay rotate-180" />
+        </div>
+        <div class="footer-inner px-[8vmax] pt-[6vmax] pb-[2vmax] relative z-[2] max-md:px-[4vw]">
+            <div class="footer-content flex justify-between uppercase max-md:flex-col max-md:gap-[3.5vmax]">
+                <div class="footer-logo max-md:flex max-md:justify-between max-md:items-center">
+                    <a href=""><img src="./logo.svg" class="w-[8vmax] hover-scale-down cursor-hover-effect" alt=""></a>
+                    <div class="social-links flex gap-[1vmax] text-[1.7vmax] mt-[3.5vmax] max-md:flex-col max-md:items-center max-md:justify-center max-md:mt-0 max-md:text-[2vmax]">
+                        <i class="fa-brands fa-square-facebook cursor-hover-effect"></i>
+                        <i class="fa-brands fa-square-instagram cursor-hover-effect"></i>
+                    </div>
+                </div>
+                <div class="links flex gap-[6vmax] text-[1.8vmax] font-black leading-[3vmax] max-md:flex-col max-md:gap-0 max-md:text-[2vmax]">
+                    <div class="links-1">
+                        <a href="" class="block cursor-hover-effect">Toptracer Range</a>
+                        <a href="" class="block cursor-hover-effect">Crazy Golf</a>
+                        <a href="" class="block cursor-hover-effect">Café</a>
+                    </div>
+                    <div class="links-2">
+                        <a href="" class="block cursor-hover-effect">Events</a>
+                        <a href="" class="block cursor-hover-effect">Golf Lessons</a>
+                        <a href="" class="block cursor-hover-effect">Contact Us</a>
+                    </div>
+                </div>
+                <div class="address text-[1.1vmax] mr-[9vmax] ml-[3vmax] leading-[1.5vmax] max-md:mx-0 max-md:text-[1.4vmax] max-md:font-semibold max-md:leading-[2vmax]">
+                    <p>A20, Sidcup Bypass</p>
+                    <p>Chislehurst</p>
+                    <p>Kent</p>
+                    <p>BR7 6RP</p>
+                    <p>Tel: <span class="font-semibold cursor-hover-effect max-md:font-bold">0208 309 0181</span></p>
+
+                    <h3 class="font-black text-[1.2vmax] cursor-hover-effect max-md:text-[1.6vmax]">Get Directions</h3>
+                </div>
+            </div>
+            <div class="copyright text-[.83vmax] leading-[1.5vmax] mt-[3.8vmax] flex justify-between max-md:flex-col max-md:gap-[2.5vmax] max-md:text-[1.1vmax] max-md:font-medium">
+                <div class="copyright-text flex">
+                    <p class="border-r-[.15vmax] border-black pr-[.5vmax]">Copyright © 2023 Adventure Leisure Ltd.
+                        All rights reserved.</p>
+                    <a href="" class="border-r-[.15vmax] border-black px-[.5vmax] cursor-hover-effect">Privacy
+                        Policy</a>
+                    <a href="" class="border-r-[.15vmax] border-black px-[.5vmax] cursor-hover-effect">Terms And
+                        Conditions</a>
+                    <a href="" class="pl-[.5vmax] cursor-hover-effect">Gender Pay Gap</a>
+                </div>
+                <div class="credit max-md:font-semibold">
+                    <a href="" class="cursor-hover-effect ">Cloned By Hassan.</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="cursor-1"></div>
+    <div class="cursor-2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

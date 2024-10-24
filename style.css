@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --green-light: #b3e824;
+  --green: #95c11e;
+  --green-dark: #039c3d;
+  --translucent-black: hsla(0, 0%, 0%, 0.4);
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+*::selection {
+  background-color: white;
+  color: var(--green);
+}
+
+body::-webkit-scrollbar {
+  background-color: black;
+  width: 0.8vw;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--green);
+  border-radius: 10px;
+}
+
+#hamburger-menu {
+  transform: translateY(-100%);
+  transition: .5s ease all;
+}
+
+#hamburger-menu.show {
+  transform: translateY(0);
+}
+
+#hamburger-menu .close-btn {
+  transition: .3s cubic-bezier(0.4, 0, 0.78, 2.19) all;
+}
+
+#hamburger-menu .close-btn:hover {
+  rotate: 90deg;
+  scale: 1.1;
+}
+
+#hamburger-menu .links a {
+  position: relative;
+  color: black;
+  transition: .3s ease all;
+}
+
+#hamburger-menu .links a::after {
+  content: var(--content);
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: white;
+  text-wrap: nowrap;
+  transition: .2s ease all;
+  margin: .2vmax 0 0 .2vmax;
+}
+
+#hamburger-menu .links a:hover::after {
+  margin: .5vmax 0 0 .5vmax;
+}
+
+.arrow-icon-page-1 .circle {
+  transition: .5s ease all;
+  cursor: pointer;
+}
+
+.arrow-icon-page-1:hover .circle {
+  scale: .5;
+  background-color: var(--green);
+}
+
+.arrow-icon-page-1 .svgs {
+  transition: .4s ease-in-out all;
+  position: relative;
+  z-index: 5;
+  transform: translateY(-50%);
+}
+
+.arrow-icon-page-1:hover .svgs {
+  transform: translateY(0);
+}
+
+nav .c-btns a {
+  transition: .3s ease all;
+}
+
+nav .c-btns a:hover {
+  color: var(--green);
+}
+
+.r-btn {
+  position: relative;
+  transition: .3s ease all;
+  overflow: hidden;
+}
+
+.r-btn::after,
+.r-btn::before {
+  content: '';
+  position: absolute;
+  top: 300%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  transition: 1s ease-in-out all;
+  scale: .4;
+  z-index: 1;
+}
+
+.r-btn::after {
+  background-color: var(--green);
+  width: 20vw;
+  height: 20vw;
+}
+
+.r-btn::before {
+  background-color: var(--green-dark);
+  width: 25vw;
+  height: 25vw;
+}
+
+.r-btn:hover {
+  scale: .95;
+}
+
+.r-btn:hover::after,
+.r-btn:hover:before {
+  scale: 3;
+}
+
+.r-btn .btn-text {
+  position: relative;
+  z-index: 10;
+  transition: .2s ease all;
+}
+
+.r-btn:hover .btn-text {
+  color: black;
+}
+
+.r-btn .btn-text-parent {
+  transition: .4s ease-in-out all;
+  position: relative;
+  z-index: 5;
+}
+
+.r-btn:hover .btn-text-parent {
+  transform: translateY(-50%);
+}
+
+.dup-effect {
+  position: relative;
+}
+
+.dup-effect::after {
+  content: 'Eat. Drink. Play.';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  -webkit-text-stroke: 1px var(--green);
+  color: black;
+  z-index: -1;
+}
+
+.marquee {
+  animation: marqueeAnim 10s linear infinite;
+}
+
+.marquee span {
+  -webkit-text-stroke: white 3px;
+  position: relative;
+  transition: 0.3s ease all;
+}
+
+.marquee span::after {
+  content: var(--span-content);
+  width: 100%;
+  height: 100%;
+  -webkit-text-stroke-color: transparent;
+  position: absolute;
+  left: 0;
+  color: black;
+  transition: 0.3s ease all;
+}
+
+.marquee span:hover {
+  color: var(--green);
+  -webkit-text-stroke-color: var(--green);
+}
+
+.marquee span:hover::after {
+  color: var(--green);
+}
+
+@keyframes marqueeAnim {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#page3 .card .overlay {
+  transition: 0.3s ease all;
+  opacity: 0;
+}
+
+#page3 .card:hover .overlay {
+  opacity: 1;
+}
+
+#page3 .card img {
+  transition: 0.3s ease all;
+}
+
+#page3 .card:hover img {
+  scale: 1.1;
+}
+
+#page3 .card .arrow-icon {
+  transition: 0.3s ease all;
+}
+
+#page3 .card:hover .arrow-icon {
+  scale: 1.1;
+}
+
+.arrow-icon {
+  transition: 0.3s ease all;
+}
+
+.arrow-icon:hover {
+  background-color: white;
+}
+
+.arrow-icon:hover svg {
+  fill: var(--green);
+}
+
+.dotted-grid {
+  width: 12vmax;
+  height: 10vmax;
+  background-image: radial-gradient(var(--green) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+#page3 .card {
+  transform: perspective(1000px) rotateX(var(--xAngle)) rotateY(var(--yAngle));
+}
+
+.carousel .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: .8s ease all;
+}
+
+.carousel .img.current {
+  opacity: 1;
+}
+
+.carousel-btn {
+  transition: .2s ease all;
+  cursor: pointer;
+  position: relative;
+}
+
+.carousel-btn.active {
+  background-color: var(--green);
+}
+
+.carousel-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  transition: .2s ease all;
+}
+
+.carousel-btn.active::after {
+  padding: 10px;
+  border: 5px solid var(--green);
+}
+
+.img-marquee {
+  animation: imgMarqueeAnim 25s linear infinite;
+}
+
+@keyframes imgMarqueeAnim {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.img-marquee .img {
+  cursor: pointer;
+}
+
+.text-outline {
+  position: relative;
+  -webkit-text-stroke: 2px var(--outline-color);
+  transition: .3s ease all;
+}
+
+.text-outline::before {
+  content: var(--content);
+  position: absolute;
+  color: black;
+  -webkit-text-stroke-color: transparent;
+}
+
+#page7 img {
+  transition: .5s ease all;
+  scale: 1.1;
+}
+
+#page7 .card:hover img {
+  opacity: 1;
+  scale: 1;
+}
+
+#page7 h3 {
+  transition: .5s ease all;
+}
+
+#page7 .card:hover h3 {
+  color: white;
+}
+
+footer * {
+  color: black;
+}
+
+.hover-scale-down {
+  transition: .2s ease all;
+}
+
+.hover-scale-down:hover {
+  scale: .9;
+}
+
+.hover-scale-up {
+  transition: .3s ease all;
+  cursor: pointer;
+}
+
+.hover-scale-up:hover {
+  scale: 1.1;
+}
+
+#page5 .images img {
+  transition: .3s ease all;
+}
+
+#page5 .images:hover img {
+  scale: 1.1;
+}
+
+footer i,
+footer .links a,
+footer .address span,
+footer .address h3,
+footer .copyright a {
+  transition: .3s ease all;
+  cursor: pointer;
+}
+
+footer i:hover,
+footer .links a:hover,
+footer .address span:hover,
+footer .address h3:hover,
+footer .copyright a:hover {
+  color: white;
+}
+
+.cursor-1 {
+  position: fixed;
+  width: 1.2vmax;
+  aspect-ratio: 1/1;
+  background-color: var(--green);
+  border-radius: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: .4s ease all;
+  border: 2px solid transparent;
+}
+
+.cursor-1.hover-state {
+  width: 4vmax;
+  background-color: transparent;
+  border-color: white;
+}
+
+.cursor-2 {
+  position: fixed;
+  width: 16vmax;
+  aspect-ratio: 1/1;
+  background-color: var(--green);
+  filter: blur(8vmax);
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.bottom-cards .card {
+  position: relative;
+}
+
+.bottom-cards .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: transparent;
+  opacity: .6;
+}
